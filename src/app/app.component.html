@@ -1,3 +1,14 @@
-<div class="cards">
-    <h1>{{events.nome}}</h1>
-</div>
+<ul>
+    @for (evento of dadosEventos; track evento.id) {
+        <li>
+            <img [src]="evento.imgFlyer" alt="">
+            <br>
+            <span>{{evento.dataInicio}} A {{evento.dataTermino}}</span>
+            <br>
+            <span>{{evento.nome}}</span>
+            <br>
+            <span>{{evento.cidade}} - {{evento.estado}}</span>
+        </li>
+    }
+</ul>
+
