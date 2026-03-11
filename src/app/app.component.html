@@ -1,14 +1,35 @@
-<ul>
-    @for (evento of dadosEventos; track evento.id) {
-        <li>
-            <img [src]="evento.imgFlyer" alt="">
-            <br>
-            <span>{{evento.dataInicio}} A {{evento.dataTermino}}</span>
-            <br>
-            <span>{{evento.nome}}</span>
-            <br>
-            <span>{{evento.cidade}} - {{evento.estado}}</span>
-        </li>
-    }
-</ul>
+<app-header></app-header>
+@if (serviceSearch.isOpen()) {
+  <app-search/>
+}
+<router-outlet/>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-search></app-search> -->
+<!-- <app-all-events></app-all-events> -->

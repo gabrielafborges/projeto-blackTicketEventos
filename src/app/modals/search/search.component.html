@@ -1,0 +1,36 @@
+<div>
+  <div class="fixed left-0 right-0 bg-white z-50 shadow-xl"
+       style="top: 96px">
+
+    <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-14 py-12">
+      <div class="flex items-center gap-4">
+
+        <svg class="text-gray-400 shrink-0" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+
+        <input
+          class="flex-1 outline-none text-xl text-gray-700 placeholder:text-gray-400 bg-transparent py-2"
+          type="text"
+          placeholder="Buscar um artista, um evento ou local"
+          autofocus>
+
+        <button
+          class="text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center transition-all text-lg"
+          (click)="close()">✕
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div
+    class="fixed left-0 right-0 bottom-0 z-40 bg-black/20 backdrop-blur-[1.5px]"
+    style="top: 96px"
+    (click)="close()">
+  </div>
+
+</div>

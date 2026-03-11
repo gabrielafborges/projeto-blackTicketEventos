@@ -1,30 +1,23 @@
-import { Component, inject, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { EventsService } from './products.service';
-
+import { Component, inject } from '@angular/core';
+import { HeaderComponent } from "./components/header/header.component";
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { SearchComponent } from "./modals/search/search.component";
+import { ModalSearchService } from './services/modal-search.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    HeaderComponent,
+    RouterOutlet,
+    SearchComponent,
+    RouterLink
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit{
-  private events  = inject(EventsService);
-
-  public dadosEventos: any[] = [];
-
-  ngOnInit() {
-  this.events.getEvents().subscribe({
-    next: (response) => {
-      console.log('Sucesso:', response);
-      this.dadosEventos = response;
-    },
-    error: (error) => {
-      console.error('Erro na requisição:', error);
-    }
-  });
-}
+export class AppComponent{
+  public serviceSearch = inject(ModalSearchService);
+  
 }

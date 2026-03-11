@@ -1,0 +1,58 @@
+@if (evento) {
+
+  <div class="relative min-h-[420px] flex items-center overflow-hidden">
+
+    <div
+      class="absolute inset-0 bg-cover bg-center scale-110"
+      [style.backgroundImage]="'url(' + evento.imgFlyer + ')'"
+      style="filter: blur(18px) brightness(0.35);">
+    </div>
+
+    
+    <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-14 py-12">
+
+      <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+        <a routerLink="" class="hover:text-white transition-colors"> Voltar </a>
+        <span class="text-gray-600">›</span>
+        <span class="text-white font-medium">{{ evento.nome }}</span>
+      </nav>
+
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="flex-1">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
+            {{ evento.nome }}
+          </h1>
+
+          <div class="flex items-center gap-2 text-gray-300 mb-3">
+            <img src="https://dev.blackticket.com.br/svg/calendar-trunks-simple-icon.svg" class="w-5 h-5 opacity-80">
+            <span class="text-sm">{{ evento.dataInicio | date:'dd/MM' }} a {{ evento.dataTermino | date:'dd/MM' }}</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-gray-300 mb-8">
+            <img src="https://dev.blackticket.com.br/svg/pin-trunks-icon.svg" class="w-5 h-5 opacity-80">
+            <span class="text-sm">{{ evento.endereco }}</span>
+          </div>
+
+          <button class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-all text-sm">
+            Compartilhar
+          </button>
+        </div>
+
+        <div class="w-full lg:w-[380px] shrink-0">
+          <img [src]="evento.imgFlyer" [alt]="evento.nome"
+               class="w-full rounded-xl shadow-2xl object-cover max-h-[260px]">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-14 py-12">
+    <h2 class="text-xl font-bold text-white mb-4">Sobre o evento</h2>
+  </div>
+
+} @else {
+  <div class="flex items-center justify-center min-h-screen">
+    <p class="text-gray-500 text-sm">Carregando...</p>
+  </div>
+}

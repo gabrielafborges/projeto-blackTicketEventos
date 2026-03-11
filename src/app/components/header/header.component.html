@@ -1,0 +1,46 @@
+
+<header class="bg-black border-b border-gray-800">
+    <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-14">
+        <div class="flex items-center justify-between h-24 ">
+            
+            <div class="flex-shrink-0">
+                <a href="/" >
+                    <img src="https://dev.blackticket.com.br/svg/full-logo-smaller.svg" 
+                         alt="Logo Blackticket" 
+                         class="h-6 w-auto">
+                </a>
+            </div>
+
+            <nav class="flex items-center space-x-10 lg:space-x-14"> 
+                <button (click)="openSearch()" class="flex items-center space-x-3 text-white group">
+                    <img src="https://dev.blackticket.com.br/svg/search-white-icon.svg" 
+                         alt="Pesquisar" 
+                         class="w-9 h-9 opacity-90 group-hover:opacity-100 transition-all">
+                    <span class="text-lg font-medium group-hover:text-gray-300 transition-colors">Pesquisar</span>
+                </button>
+                
+                <a href="#" class="flex items-center space-x-3 text-white group">
+                    <img src="https://dev.blackticket.com.br/svg/wallet-icon-beerus.svg" 
+                         alt="Carteira" 
+                         class="w-9 h-9 opacity-90 group-hover:opacity-100 transition-all">
+                    <span class="text-lg font-medium group-hover:text-gray-300 transition-colors">Carteira de ingressos</span>
+                </a>
+                <a routerLink="/login" class="flex items-center space-x-3 text-white group cursor-pointer">
+                    <img src="https://dev.blackticket.com.br/svg/people-icon-beerus.svg" alt="Usuário" class="w-9 h-9 opacity-90 group-hover:opacity-100 transition-all">
+                    <span class="text-lg font-medium group-hover:text-gray-300">Entrar / Cadastrar</span>
+                </a>
+                <!-- <a href="#" class="flex items-center space-x-3 text-white group">
+                    <img src="https://dev.blackticket.com.br/svg/people-icon-beerus.svg" 
+                         alt="Usuário" 
+                         class="w-9 h-9 opacity-90 group-hover:opacity-100 transition-all">
+                    <span class="text-lg font-medium group-hover:text-gray-300 transition-colors">
+                        Entrar / Cadastrar</span>
+                </a> -->
+            </nav>
+
+        </div>
+    </div>
+    
+</header>
+
+
