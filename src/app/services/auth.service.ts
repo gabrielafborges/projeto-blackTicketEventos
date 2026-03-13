@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RequestLogin, Claim, UserToken, LoginResponse } from '../models/dataLogin'
+import { RequestLogin, LoginResponse } from '../models/dataLogin'
+import { UserPersonalData } from '../models/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,9 @@ export class AuthService {
 
   login(req: RequestLogin): Observable<LoginResponse>{
     return this.http.post<LoginResponse>(`${this.apiUrl}/Usuario/Login`, req);
+  }
+
+  userAuthData(): Observable<UserPersonalData>{
+    return this.http.get<UserPersonalData>(`${this.apiUrl}/Cliente/ObterDadosClienteAutenticado`)
   }
 }
