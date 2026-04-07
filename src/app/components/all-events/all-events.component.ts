@@ -15,12 +15,14 @@ import { RouterLink } from '@angular/router';
 
 export class AllEventsComponent implements OnInit {
   private events = inject(EventsService);
-  public dataEvents: Events[] = [];
+  public dataEvents: Events[] | null = null;
   
+
   ngOnInit() {
     this.events.getEvents().subscribe({
       next: (response) => {
        this.dataEvents = response;
+       
       },
       error: (error) => {
        console.error('Erro na requisição:', error);

@@ -1,0 +1,111 @@
+<div class="flex flex-col items-center w-full p-10">
+  
+  <div class="flex items-center gap-2 w-full max-w-6xl mb-6">
+    <span class="text-gray-600 text-sm">Página do evento</span>
+    <span class="text-gray-400">›</span>
+    <span class="text-gray-800 text-sm font-medium">Detalhes da compra</span>
+  </div>
+
+
+  <div class="flex flex-row gap-16 w-full justify-center items-start max-w-6xl">
+
+   
+    <div class="bg-[#e0e0e0] p-6 rounded-xl w-full max-w-3xl">
+      <h2 class="text-[22px] font-semibold text-gray-800 mb-3">
+        Forma de pagamento
+      </h2>
+
+      <div class="border-t border-gray-400 mb-3"></div>
+
+      <div class="space-y-3">
+
+        <label class="flex items-center justify-between bg-[#f5f5f5] px-5 py-3 rounded-lg cursor-pointer shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 bg-gray-500 rounded-sm"></div>
+            <span class="text-gray-800 text-[15px]">Cartão de crédito</span>
+          </div>
+          <input type="radio" name="payment" class="w-4 h-4 accent-gray-700" />
+        </label>
+
+        <label class="flex items-center justify-between bg-[#f5f5f5] px-5 py-3 rounded-lg cursor-pointer shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 bg-teal-500 rotate-45"></div>
+            <span class="text-gray-800 text-[15px]">PIX</span>
+          </div>
+          <input type="radio" name="payment" class="w-4 h-4 accent-gray-700" />
+        </label>
+
+      </div>
+    </div>
+
+
+    <div class="bg-[#eeeeee] p-6 rounded-xl w-full max-w-3xl">
+      <h2 class="text-[22px] font-semibold text-gray-800 mb-3">
+        Resumo da compra
+      </h2>
+
+      <div class="border-t border-gray-400 mb-3"></div>
+
+      <div class="flex flex-col gap-3 mb-3">
+        <img src="https://via.placeholder.com/550x160" class="w-full h-[160px] rounded-xl object-cover" />
+        <div>
+          <h3 class="text-[18px] font-semibold text-gray-900 mb-1">Tech Summit 2026</h3>
+          <div class="flex items-center gap-2 text-gray-700 text-sm mb-0.5">
+            <div class="w-4 h-4 border border-gray-500 rounded-sm"></div>
+            <span>25/12/2026</span>
+          </div>
+          <div class="flex items-center gap-2 text-blue-600 text-sm">
+            <div class="w-4 h-4 border border-blue-600 rounded-full"></div>
+            <span>Rua Professor Bitencourt</span>
+            <span>↗</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-300 mb-3"></div>
+
+      <div class="space-y-2 text-[14px] text-gray-800">
+        <div class="flex justify-between">
+          <span>Inovação e Startups</span>
+          <span>R$ 100,00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-1.5">
+            <span>Taxa de conveniência</span>
+            <div class="w-4 h-4 rounded-full border border-blue-500 text-[10px] flex items-center justify-center text-blue-500">i</div>
+          </div>
+          <span>R$ 0,00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-1.5">
+            <span>Taxa de processamento</span>
+            <div class="w-4 h-4 rounded-full border border-blue-500 text-[10px] flex items-center justify-center text-blue-500">i</div>
+          </div>
+          <span>R$ 0,00</span>
+        </div>
+      </div>
+
+      <div class="flex justify-between mt-4 text-[15px] font-semibold text-gray-900">
+        <span>Valor total:</span>
+        <span>R$ 100,00</span>
+      </div>
+
+      <p class="text-xs text-gray-600 mt-4 leading-relaxed">
+        Ao finalizar a compra você concorda com os nossos
+        <a href="#" class="text-blue-600 underline">Termos</a> &
+        <a href="#" class="text-blue-600 underline">Política de devolução e reembolso</a>
+      </p>
+
+      <button class="w-full mt-4 bg-[#1976d2] text-white py-3 rounded-lg text-[15px] font-medium hover:bg-[#1565c0]">
+        Finalizar compra
+      </button>
+
+      <div class="flex justify-center mt-4">
+        <div class="bg-white px-5 py-3 rounded-xl shadow text-[14px] text-gray-800">
+          Seu carrinho expira em: <span class="font-semibold">07:15</span> minutos
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

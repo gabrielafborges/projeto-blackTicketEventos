@@ -27,7 +27,13 @@
                 </a>
                 <a routerLink="/login" class="flex items-center space-x-3 text-white group cursor-pointer">
                     <img src="https://dev.blackticket.com.br/svg/people-icon-beerus.svg" alt="Usuário" class="w-9 h-9 opacity-90 group-hover:opacity-100 transition-all">
-                    <span class="text-lg font-medium group-hover:text-gray-300">Entrar / Cadastrar</span>
+
+                    @if(nome){
+                        <span class="text-lg font-medium group-hover:text-gray-300">Olá, {{nome}}</span>
+                    }@else {
+                        <span class="text-lg font-medium group-hover:text-gray-300">Entrar / Cadastrar</span>
+                    }
+                    
                 </a>
                 <!-- <a href="#" class="flex items-center space-x-3 text-white group">
                     <img src="https://dev.blackticket.com.br/svg/people-icon-beerus.svg" 
