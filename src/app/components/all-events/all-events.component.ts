@@ -16,6 +16,7 @@ import { catchError, firstValueFrom } from 'rxjs';
 
 export class AllEventsComponent implements OnInit {
   private events = inject(EventsService);
+
   public dataEvents: Events[] | null = null;  
 
   async ngOnInit(){
@@ -25,7 +26,7 @@ export class AllEventsComponent implements OnInit {
       console.error('ERRO : ', error);
       
     }
-  }
+
 
   // ngOnInit() {
   //   this.events.getEvents().subscribe({
@@ -38,8 +39,6 @@ export class AllEventsComponent implements OnInit {
   //   });
   // }
 }
-
-
-
+}
 
 

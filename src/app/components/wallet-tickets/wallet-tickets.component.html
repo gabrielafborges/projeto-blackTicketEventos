@@ -1,0 +1,7 @@
+@if(carteiraDeIngressos){
+    @for(itemAtual of carteiraDeIngressos; track itemAtual.id){
+        <h1>{{itemAtual.nome}}</h1>
+    }
+}@else {
+    <p>Carregando</p>
+}

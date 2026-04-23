@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
 @if(!dataEvents){
     <p>Carregando...</p>
@@ -33,11 +34,56 @@
                     <span class="text-sm text-gray-600">
                         {{evento.cidade}} - {{evento.estado}}
                     </span>
+=======
+@if (!dataEvents) {
+  <p class="flex justify-center items-center h-screen">
+    <span
+      class="w-10 h-10 border-4 border-gray-300 border-t-black rounded-full animate-spin"
+    ></span>
+  </p>
+} @else {
+  
+    <div class="w-full max-w-7xl mx-auto px-4 min-h-screen flex flex-col justify-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Destaques Blackticket</h2>
+
+    <ul class="flex gap-8 items-center">
+      @for (evento of dataEvents; track evento.id) {
+        @if (evento.eventoFuturo) {
+          <li class="w-[350px] md:w-[450px] bg-white rounded-2xl shadow-lg overflow-hidden">
+            <img [src]="evento.imgFlyer" class="w-full h-52 object-cover" />
+
+            <div class="p-4 flex justify-between items-center">
+              <div>
+                <h3 class="font-semibold text-lg">{{ evento.nome }}</h3>
+                <div class="date">
+                    <img src="https://dev.blackticket.com.br/svg/calendar-simple-icon.svg" alt="">
+                    <p class="text-sm text-gray-500">
+                        {{ evento.dataInicio | date: "dd/MM/yyyy" }}
+                    </p>
                 </div>
+                <div class="city">
+                    <img src="https://dev.blackticket.com.br/svg/pin-outline-bulma-icon.svg" alt="">
+                    <p class="text-sm text-gray-500">
+                        {{ evento.cidade }} - {{ evento.estado }}
+                    </p>
+>>>>>>> b4a02ac857d5b32eff35257e71a26e77740a4dd3
+                </div>
+              </div>
+
+              <button [routerLink]="['/info-eventos', evento.id]" class="bg-blue-600 text-white px-4 py-2 rounded-lg" > Comprar </button>
             </div>
+<<<<<<< HEAD
         </div>
     </li>
     }}
 }    
 </ul>
     
+=======
+          </li>
+        }
+      }
+    </ul>
+  </div>
+}
+>>>>>>> b4a02ac857d5b32eff35257e71a26e77740a4dd3

@@ -1,0 +1,8 @@
+.date, .city{
+    display: flex;
+    margin: 10px 0;
+}
+
+.date p, .city p{
+    margin-top: 2px;
+}

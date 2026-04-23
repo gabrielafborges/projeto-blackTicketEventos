@@ -2,7 +2,7 @@ import { Component, inject, Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { RequestLogin, Claim, UserToken, LoginResponse } from '../../models/dataLogin'
+import { RequestLogin, LoginResponse } from '../../models/dataLogin'
 
 @Component({
   selector: 'app-login-area',
@@ -32,6 +32,7 @@ export class LoginAreaComponent {
 
   errorMessage: string = '';
   showError: boolean = false;
+  nome: string = '';
 
 loggedIn(){
   this.service.login(this.credentials).subscribe({
@@ -41,7 +42,8 @@ loggedIn(){
       this.auth();
       this.credentials.email = ''
       this.credentials.senha = ''
-      this.router.navigate(['/profileUser'])
+      
+      this.router.navigate(['/user-wallet'])
     },
     error: (erro) => {
       this.errorMessage = erro.error.errors[0];
@@ -59,7 +61,10 @@ loggedIn(){
 auth(){
   this.service.userAuthData().subscribe({
     next: (res) => {
+      this.service.nomeUsuario.next(res.nome);
       console.log("AUTH: " + res);
+      console.log('nome do ususario: ', this.service.nomeUsuario);
+      
     },
     error: (err) => {
       console.log(err);
