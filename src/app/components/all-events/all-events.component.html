@@ -1,3 +1,40 @@
+<<<<<<< HEAD
+<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+@if(!dataEvents){
+    <p>Carregando...</p>
+}@else{
+    
+    @for (evento of dataEvents; track evento.id) {
+        @if(evento.eventoFuturo){
+        
+        <li [routerLink]="['/info-eventos', evento.id]" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer">
+           
+            <img [src]="evento.imgFlyer" 
+                 [alt]="`Flyer do evento ${evento.nome}`" 
+                 class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
+            
+            <div class="p-5 space-y-2">
+                <h3 class="text-lg font-bold text-gray-800">
+                  {{evento.nome}}
+                </h3>
+                
+            <div class="space-y-2"> 
+                <div class="flex items-center gap-2">
+                    <img src="https://dev.blackticket.com.br/svg/calendar-trunks-simple-icon.svg" alt="Ícone calendário" 
+                    class="w-4 h-4">
+                    <span class="text-sm text-black-600 font-semibold">
+                     {{evento.dataInicio | date: 'dd/MM'}}  a {{evento.dataTermino | date:'dd/MM'}}
+                    </span>
+                </div>
+    
+    
+                <div class="flex items-center gap-2">        
+                    <img src="https://dev.blackticket.com.br/svg/pin-trunks-icon.svg" alt="Ícone localização" 
+                    class="w-4 h-4">
+                    <span class="text-sm text-gray-600">
+                        {{evento.cidade}} - {{evento.estado}}
+                    </span>
+=======
 @if (!dataEvents) {
   <p class="flex justify-center items-center h-screen">
     <span
@@ -29,14 +66,24 @@
                     <p class="text-sm text-gray-500">
                         {{ evento.cidade }} - {{ evento.estado }}
                     </p>
+>>>>>>> b4a02ac857d5b32eff35257e71a26e77740a4dd3
                 </div>
               </div>
 
               <button [routerLink]="['/info-eventos', evento.id]" class="bg-blue-600 text-white px-4 py-2 rounded-lg" > Comprar </button>
             </div>
+<<<<<<< HEAD
+        </div>
+    </li>
+    }}
+}    
+</ul>
+    
+=======
           </li>
         }
       }
     </ul>
   </div>
 }
+>>>>>>> b4a02ac857d5b32eff35257e71a26e77740a4dd3
