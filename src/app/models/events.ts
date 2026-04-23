@@ -9,5 +9,8 @@ export interface Events {
     cidade: string;
     categoria: string
     imgFlyer: string;
+    eventoVigente: boolean,
+    eventoFuturo: boolean,
+    possuiSubEventos: boolean
 }
 

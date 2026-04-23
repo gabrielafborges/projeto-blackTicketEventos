@@ -3,6 +3,7 @@ import { EventsService } from '../../services/products.service';
 import { DatePipe } from '@angular/common';
 import { Events } from '../../models/events';
 import { RouterLink } from '@angular/router';
+import { catchError, firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-all-events',
@@ -15,18 +16,27 @@ import { RouterLink } from '@angular/router';
 
 export class AllEventsComponent implements OnInit {
   private events = inject(EventsService);
-  public dataEvents: Events[] = [];
-  
-  ngOnInit() {
-    this.events.getEvents().subscribe({
-      next: (response) => {
-       this.dataEvents = response;
-      },
-      error: (error) => {
-       console.error('Erro na requisição:', error);
-      }
-    });
+  public dataEvents: Events[] | null = null;  
+
+  async ngOnInit(){
+    try{
+      this.dataEvents = await firstValueFrom(this.events.getEvents())
+    } catch (error){
+      console.error('ERRO : ', error);
+      
+    }
   }
+
+  // ngOnInit() {
+  //   this.events.getEvents().subscribe({
+  //     next: (response) => {
+  //      this.dataEvents = response;
+  //     },
+  //     error: (error) => {
+  //      console.error('Erro na requisição:', error);
+  //     }
+  //   });
+  // }
 }
 
 
