@@ -3,11 +3,8 @@ import { EventsService } from '../../services/products.service';
 import { DatePipe } from '@angular/common';
 import { Events } from '../../models/events';
 import { RouterLink } from '@angular/router';
-<<<<<<< HEAD
 import { Subscription } from 'rxjs';
-=======
 import { catchError, firstValueFrom } from 'rxjs';
->>>>>>> dc227842d323a413549812abccbde1277ca51925
 
 @Component({
   selector: 'app-all-events',
@@ -20,29 +17,14 @@ import { catchError, firstValueFrom } from 'rxjs';
 
 export class AllEventsComponent implements OnInit {
   private events = inject(EventsService);
-<<<<<<< HEAD
   public dataEvents: Events[] | null = null;
   
   eventsSubscription: Subscription | undefined;
 
-  ngOnInit() {
-    this.eventsSubscription = this.events.getEvents().subscribe({
-      next: (response) => {
-       this.dataEvents = response;
-       
-      },
-      error: (error) => {
-       console.error('Erro na requisição:', error);
-      }
-    });
-  }
 
   ngOnDestroy(){
     this.eventsSubscription ? this.eventsSubscription?.unsubscribe() : console.log('Erro ao se desinscrever');
   }
-=======
-
-  public dataEvents: Events[] | null = null;  
 
   async ngOnInit(){
     try{
@@ -64,7 +46,6 @@ export class AllEventsComponent implements OnInit {
   //   });
   // }
 }
->>>>>>> dc227842d323a413549812abccbde1277ca51925
 }
 
 
