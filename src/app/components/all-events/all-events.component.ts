@@ -3,6 +3,7 @@ import { EventsService } from '../../services/products.service';
 import { DatePipe } from '@angular/common';
 import { Events } from '../../models/events';
 import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-all-events',
@@ -17,9 +18,10 @@ export class AllEventsComponent implements OnInit {
   private events = inject(EventsService);
   public dataEvents: Events[] | null = null;
   
+  eventsSubscription: Subscription | undefined;
 
   ngOnInit() {
-    this.events.getEvents().subscribe({
+    this.eventsSubscription = this.events.getEvents().subscribe({
       next: (response) => {
        this.dataEvents = response;
        
@@ -28,6 +30,10 @@ export class AllEventsComponent implements OnInit {
        console.error('Erro na requisição:', error);
       }
     });
+  }
+
+  ngOnDestroy(){
+    this.eventsSubscription ? this.eventsSubscription?.unsubscribe() : console.log('Erro ao se desinscrever');
   }
 }
 

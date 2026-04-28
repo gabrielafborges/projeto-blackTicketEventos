@@ -4,10 +4,11 @@ import { EventsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe, CurrencyPipe} from '@angular/common';
 import { FormsModule } from "@angular/forms";
+import { AllEventsComponent } from "../all-events/all-events.component";
 
 @Component({
   selector: 'app-info-item',
-  imports: [DatePipe, RouterLink, CurrencyPipe, FormsModule],
+  imports: [DatePipe, RouterLink, CurrencyPipe, FormsModule, AllEventsComponent],
   templateUrl: './info-item.component.html',
   styleUrl: './info-item.component.css'
 })

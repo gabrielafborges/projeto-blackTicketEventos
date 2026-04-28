@@ -6,13 +6,13 @@
   </p>
 } @else {
   
-    <div class="w-full max-w-7xl mx-auto px-4 min-h-screen flex flex-col justify-center">
+    <div class="w-full max-w-7xl mx-auto px-4 min-h-screen flex flex-col mt-20">
     <h2 class="text-3xl font-bold text-gray-900 mb-8">Destaques Blackticket</h2>
 
     <ul class="flex gap-8 items-center">
       @for (evento of dataEvents; track evento.id) {
-        @if (evento.eventoFuturo) {
-          <li class="w-[350px] md:w-[450px] bg-white rounded-2xl shadow-lg overflow-hidden">
+        @if (evento.eventoFuturo && evento.imgFlyer !== null) {
+          <li [routerLink]="['/info-eventos', evento.id]" class="w-[350px] md:w-[450px] bg-white rounded-2xl shadow-lg overflow-hidden">
             <img [src]="evento.imgFlyer" class="w-full h-52 object-cover" />
 
             <div class="p-4 flex justify-between items-center">
